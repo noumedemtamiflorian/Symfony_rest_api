@@ -9,8 +9,10 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 
 
+
 /**
  * @ApiResource(
+ *     attributes={"order"={"id": "DESC"}},
  *     normalizationContext={"groups"={"article:read"}},
  *     denormalizationContext={"groups"={"article:write"}}
  * )
