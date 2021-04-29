@@ -53,7 +53,7 @@ class Article
     private $image;
 
     /**
-     * @Groups({"article:write","article:read"})
+     * @Groups({"article:write"})
      * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="articles")
      * @ORM\JoinColumn(nullable=false)
      */

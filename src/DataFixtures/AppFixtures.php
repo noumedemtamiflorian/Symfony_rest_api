@@ -14,12 +14,13 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create();
         $categories = $this->categorie($manager);
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             $article = new Article();
             $article->setTitle($faker->realTextBetween(20, 50));
             $article->setDescription($faker->realTextBetween(100, 200));
-            $article->setContent($faker->realTextBetween(300, 500));
+            $article->setContent($faker->realTextBetween(600, 1000));
             $article->setCategorie($faker->randomElement($categories));
+            $article->setImage('');
             $manager->persist($article);
             $manager->flush();
         }
@@ -28,7 +29,7 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create();
         $categories = [];
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 2; $i++) {
             $categorie = new Categorie();
             $categorie->setTitle($faker->realTextBetween(20, 50));
             $categories[] = $categorie;
